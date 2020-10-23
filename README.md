@@ -26,4 +26,4 @@
 #      When user press '1' again, the game will continue (User will be given an additional 3 seconds to prepare)
 #      When user press '2', the game status will be printed out (Level of difficulty, score, and additional power user gained)
 #  
-# (05) 
+# (05) Program codes in multiple files
