@@ -2,7 +2,7 @@
 # Member 1: Wong Ming Yui Lucas (3035568037)
 # Member 2: Tse Chung Wan (3035689324)
 
-# Game Discription of Pec-man:
+# Game Discription of Pac-Man:
 # 
 #
 #
@@ -15,6 +15,8 @@
 #      In level 3, roadblocks will be randomly generated during the game
 #
 # (02) Data structures for storing game status
+#      All variables/parameters (e.g. position/ level/ map data) of current game status (i.e. when user selected save after press '1') will store in save.txt by File input stream
+#      these variables/parameters may stored using different types of data structures (e.g. using 2D array for map data, struct/class for each ghost's position, status, etc...)
 #
 # (03) Dynamic memory management
 #      Users may pause their game and save it anytime. 
@@ -27,3 +29,6 @@
 #      When user press '2', the game status will be printed out (Level of difficulty, score, and additional power user gained)
 #  
 # (05) Program codes in multiple files
+#      besides the main.cpp for geting usage input (e.g. wasd for direction / '1' for pause game in every 0.1 sec interval)
+#      most of other function/code segment may put in other .cpp/.h and using Makefile to compile it
+#      these function maybe the algorithms to control the ghost's movement (to chase player), the save function, generation of random event
