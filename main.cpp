@@ -4,36 +4,70 @@
 
 
 #include <ncurses.h>
-#include <string>
-#include <cstdlib>
-#include <ctime> 
+#include <chrono>
+#include <vector>
+
 #include "player.h"     //all player infomation(location) and control
+#include "obj_init.h"   //indicate obj location
+#include "mapInfo.h"    
 
 using namespace std;
+
+
 
 int main()
 {
     initscr();          //initialize ncurses "terminal"
     noecho();           //press key without printing it (no echo)
+    curs_set(0);        //hiden the curser
 
     //get screen size
     int yMax, xMax;
     getmaxyx(stdscr, yMax, xMax);
 
+    int player_start_y = 15, player_start_x = 25;                           //player initial location (y, x)
+    vector<int> player_Location = obj_init(player_start_y, player_start_x); //obj_init.h
+    bool win = false;                                                       //win condition, eat all dot
+    bool end = false;                                                       //end condition, got killed by ghost/ exceed time limit
+
     //create new "window" to play
-    WINDOW *playwin = newwin(30, 50, 0, 0);
+    WINDOW *playwin = newwin(25, 70, 0, 0);     //define playwin size (30*70) starting at (0,0), including score board
     box(playwin, 0, 0);
     refresh();
-    wrefresh(playwin);      //refresh window to update changes
+    wrefresh(playwin);                          //refresh window to update changes
 
-    Player * p = new Player(playwin, 15, 25, '<');      //create pac-man
+    mapInfo map1;
+    map1.init_dot(playwin);                     //print dot before game start in the map
+
+
+    Player * p = new Player(playwin, player_start_y, player_start_x, '<', 0);      //create pac-man in playwin, coordinate(y, x), symbol, score
+
+
 
     do {
+        p -> eatdot();                   //check if player eaten a '.', 10 marks for each
         p -> display();
         wrefresh(playwin);
-    }   while (p -> getmv() != 'm');        //'m' to quit game
 
+        obj_refresh(player_Location, p -> y_coor, p -> x_coor);     //refresh player location, in obj_init.h
+        if (p -> score >= 23*48*10){
+            win = true;
+            break;
+        }
 
+    }   while (p -> getmv() != 'q');        //'q' to quit game
+    
+
+    //game over or quit condition
+    if (win == true){
+        mvprintw(9, 10, "congrat! you win! ^^");
+    }
+    else if (end == true){
+        mvprintw(9, 10, "hope you can do better next time ;)");
+    }
+    mvprintw(10, 10, "press any key to exit");
+
+    getch();
 
     endwin();
 

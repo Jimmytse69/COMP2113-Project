@@ -8,7 +8,7 @@
 class Player
 {
     public:
-        Player(WINDOW * win, int y_coor, int x_coor, char c);
+        Player(WINDOW * win, int y_coor, int x_coor, char c, int score);    //function overloading (not sure)
 
         void mvup();        //move user
         void mvdown();
@@ -16,11 +16,13 @@ class Player
         void mvright();
         int getmv();        //get input
         void display();
+        void eatdot();
 
-    private:
+
         int  y_coor, x_coor, xMax, yMax;
         char character;
         WINDOW * curwin;
+        int score;
 };
 
 
