@@ -5,7 +5,12 @@
 
 class ghost {
 public:
+       void Ghosts();
+       
        int speed;
+       int diff;
+       int turning_tick;
+       bool turning;
        
 };
 
