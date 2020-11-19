@@ -39,9 +39,10 @@ int main()
     box(playwin, 0, 0);
     refresh();
     wrefresh(playwin);                          //refresh window to update changes
-
+    
+    dot Dot[3];
     mapInfo map1;
-    map1.init_dot(playwin);                     //print dot before game start in the map
+    map1.init_dot(playwin, Dot);                     //print dot before game start in the map
 
 
     Player * p = new Player(playwin, player_start_y, player_start_x, '<', 0);      //create pac-man in playwin, coordinate(y, x), symbol, score
@@ -49,7 +50,7 @@ int main()
 
 
     do {
-        p -> eatdot();                   //check if player eaten a '.', 10 marks for each
+        p -> eatdot();                   //check if player eaten a 'o', 10 marks for each
         p -> display();
         wrefresh(playwin);
 
