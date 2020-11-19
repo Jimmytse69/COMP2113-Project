@@ -23,10 +23,13 @@ main.o: main.cpp $(HEADERS)
 
 
 clean:
-		rm -rf main main.o player.o mapInfo.o
+		rm -rf main $(OBJECTS)
+
+clean_all:
+		rm -rf main $(OBJECTS) local ncurses win_streak.txt		 #clean all file including save of win_streak record
 
 ncurses:
 		chmod +x buildncurses.sh
 		./buildncurses.sh
 
-.PHONY: clean
+.PHONY: clean clean_all ncurses local
