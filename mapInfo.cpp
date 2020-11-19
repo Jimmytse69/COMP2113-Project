@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include <vector>
 #include <time.h>
-#include <cstdib>                              //Needed for calling random
+#include <cstdlib>                              //Needed for calling random
 
 #include "mapInfo.h"
 #include "player.h"
