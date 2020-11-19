@@ -28,13 +28,15 @@ void mapInfo::init_dot(WINDOW * playwin)
     }
 }
 
-void mapInfo::moving(dot) {
+void mapInfo::moving_speed(dot) {
     int r = rand()%8 + 1;
 }
 
-class dot {
-public:
-    int speed;
-    int diff;
+void mapInfo::change_direction(dot) {
+    
+}
+   
+void mapInfo::eat_regenerate(dot) {
+    
 }
     
