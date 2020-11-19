@@ -27,6 +27,10 @@ void mapInfo::init_dot(WINDOW * playwin)
         }
     }
 }
+    
+void mapInfo::refresh_position() {
+
+}
 
 void mapInfo::moving_speed(dot) {
     int r = rand()%8 + 1;
