@@ -4,21 +4,22 @@
 
 OBJECTS = player.o mapInfo.o main.o
 HEADERS = player.h mapInfo.h obj_init.h
-CXXFLAGS=-I local/include/ncursestw -I local/include -I include -pthread -std=c++11 -pedantic-errors -Ofast
-LDFLAGS=-L local/lib -std=c++11 -pedantic-errors -lncursestw -pthread
+CXXFLAGS=-I local/include/ncursestw -I local/include -I include -pthread -Ofast
+LDFLAGS=-L local/lib -lncursestw -pthread
 
 all: ncurses $(OBJECTS) $(HEADERS)
 		g++ $(OBJECTS) -o main $(LDFLAGS)
 		@echo "complied!"
 
-palyer.o: player.cpp player.h
+palyer.o: player.cpp $(HEADERS)
 		g++ $(CXXFLAGS) $< -c -o $@
 
-mapInfo.o: mapInfo.cpp player.h mapInfo.h
+mapInfo.o: mapInfo.cpp $(HEADERS)
 		g++ $(CXXFLAGS) $< -c -o $@
 
-main.o: main.cpp player.h obj_init.h mapInfo.h
+main.o: main.cpp $(HEADERS)
 		g++ $(CXXFLAGS) $< -c -o $@
+
 
 
 clean:
