@@ -1,5 +1,7 @@
 #include <ncurses.h>
 #include <vector>
+#include <time.h>
+#include <cstdib>                              //Needed for calling random
 
 #include "mapInfo.h"
 #include "player.h"
@@ -21,3 +23,17 @@ void mapInfo::init_dot(WINDOW * playwin)
         }
     }
 }
+
+void mapInfo::moving(dot) {
+    srand(time(NULL));                          //Initialise random seed
+    int r = rand()%8 + 1;
+    if                                   // Check if the dot is within the border
+}
+
+class dot {
+public:
+    int y_coor, x_coor;
+    int speed;
+    int diff;
+}
+    
