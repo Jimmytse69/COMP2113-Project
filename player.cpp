@@ -99,7 +99,7 @@ void Player::display()
 
 void Player::eatdot()
 {
-    if (chtype mvwinch(curwin, y_coor, x_coor) == '.'){
-        score += 10;        //10 marks for each '.'
+    if (chtype mvwinch(curwin, y_coor, x_coor) == 'o'){
+        score += 10;        //10 marks for each 'o'
     }
 }
