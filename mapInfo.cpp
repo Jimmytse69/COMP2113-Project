@@ -7,7 +7,7 @@
 
 void mapInfo::init_dot(WINDOW * playwin)
 {
-    chtype dot = '.';
+    chtype dot = 'o';
 
     for (int i = 1; i < 24; ++i) {
         for (int j = 1; j < 50; ++j) {
