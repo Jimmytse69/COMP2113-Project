@@ -6,6 +6,7 @@
 #include <ncurses.h>
 #include <chrono>
 #include <vector>
+#include <cstdib>
 
 #include "player.h"     //all player infomation(location) and control
 #include "obj_init.h"   //indicate obj location
@@ -24,8 +25,11 @@ int main()
     //get screen size
     int yMax, xMax;
     getmaxyx(stdscr, yMax, xMax);
-
-    int player_start_y = 15, player_start_x = 25;                           //player initial location (y, x)
+    
+    srand(time(NULL));
+    int player_start_y = rand()%15 + 1;
+    int player_start_x = rand()%25 + 1;             //player initial location (y, x)
+    
     vector<int> player_Location = obj_init(player_start_y, player_start_x); //obj_init.h
     bool win = false;                                                       //win condition, eat all dot
     bool end = false;                                                       //end condition, got killed by ghost/ exceed time limit
