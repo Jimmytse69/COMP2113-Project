@@ -6,7 +6,7 @@
 #include <ncurses.h>
 #include <chrono>
 #include <vector>
-#include <cstdib>
+#include <cstdlib>
 
 #include "player.h"     //all player infomation(location) and control
 #include "obj_init.h"   //indicate obj location
