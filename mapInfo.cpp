@@ -10,11 +10,15 @@
 void mapInfo::init_dot(WINDOW * playwin)
 {
     chtype dot = 'o';
+    count = 0;         //Only three dots in the board
 
     for (int i = 1; i < 24; ++i) {
         for (int j = 1; j < 50; ++j) {
             if (j != 49){
-                mvwaddch(playwin, i, j, dot);
+                srand(time(NULL));
+                if (rand()%23 + 1 == i && count < 3) {
+                    mvwaddch(playwin, i, j, dot);
+                    count++;
             }
             else {
                 mvwaddch(playwin, i, j, '|');   //print border (right hand side for score broad)
@@ -25,14 +29,11 @@ void mapInfo::init_dot(WINDOW * playwin)
 }
 
 void mapInfo::moving(dot) {
-    srand(time(NULL));                          //Initialise random seed
     int r = rand()%8 + 1;
-    if                                   // Check if the dot is within the border
 }
 
 class dot {
 public:
-    int y_coor, x_coor;
     int speed;
     int diff;
 }
