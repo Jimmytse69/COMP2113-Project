@@ -21,7 +21,7 @@ void mapInfo::init_dot(WINDOW * playwin, std::vector<dot> Dot)
         for (int j = 1; j < 50; ++j) {
             if (j != 49 && count < 3){
                 srand(time(NULL));
-                if (rand()%23 + 1 == i && rand()%49 + 1) {
+                if (rand()%23 + 1 == i && rand()%49 + 1 == j) {
                     mvwaddch(playwin, i, j, 'o');
                     D.x_coor = j;
                     D.y_coor = i;
@@ -30,7 +30,7 @@ void mapInfo::init_dot(WINDOW * playwin, std::vector<dot> Dot)
                     count++;
                 }
             }
-            else {
+            else if (j == 49) {
                 mvwaddch(playwin, i, j, '|');   //print border (right hand side for score broad)
             }
 
