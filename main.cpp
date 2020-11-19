@@ -10,7 +10,7 @@
 
 #include "player.h"     //all player infomation(location) and control
 #include "obj_init.h"   //indicate obj location
-#include "mapInfo.h"    
+#include "mapInfo.h"
 
 using namespace std;
 
@@ -25,11 +25,11 @@ int main()
     //get screen size
     int yMax, xMax;
     getmaxyx(stdscr, yMax, xMax);
-    
+
     srand(time(NULL));
     int player_start_y = rand()%15 + 1;
     int player_start_x = rand()%25 + 1;             //player initial location (y, x)
-    
+
     vector<int> player_Location = obj_init(player_start_y, player_start_x); //obj_init.h
     bool win = false;                                                       //win condition, eat all dot
     bool end = false;                                                       //end condition, got killed by ghost/ exceed time limit
@@ -39,10 +39,10 @@ int main()
     box(playwin, 0, 0);
     refresh();
     wrefresh(playwin);                          //refresh window to update changes
-    
-    dot Dot[3];
-    mapInfo map1;
-    map1.init_dot(playwin, Dot);                     //print dot before game start in the map
+
+    vector<dot> Dot;
+    mapInfo * map1 = new mapInfo(playwin, Dot);
+    //map1.init_dot(playwin, Dot);                     //print dot before game start in the map
 
 
     Player * p = new Player(playwin, player_start_y, player_start_x, '<', 0);      //create pac-man in playwin, coordinate(y, x), symbol, score
@@ -50,6 +50,7 @@ int main()
 
 
     do {
+        map1 -> init_dot(playwin, Dot);
         p -> eatdot();                   //check if player eaten a 'o', 10 marks for each
         p -> display();
         wrefresh(playwin);
@@ -61,7 +62,7 @@ int main()
         }
 
     }   while (p -> getmv() != 'q');        //'q' to quit game
-    
+
 
     //game over or quit condition
     if (win == true){
