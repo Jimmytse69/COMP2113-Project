@@ -1,18 +1,21 @@
 
 
-#ifndef _GHOST_H
-#define _GHOST_H
+#ifndef _DOT_H
+#define _DOT_H
 
-class ghost {
+class dot {
 public:
-       void Ghosts();
+       void Dots();
        
+       int y_coor, x_coor;
        int speed;
        int diff;
        int turning_tick;
        bool turning;
        
 };
+
+
 
 #endif
        
