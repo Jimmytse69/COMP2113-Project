@@ -14,12 +14,11 @@ mapInfo::mapInfo(WINDOW * playwin, std::vector<dot> Dot)
 
 void mapInfo::init_dot(WINDOW * playwin, std::vector<dot> Dot)
 {
-    int count = 0;         //Only three dots in the board
     dot D;  //temp storage
 
     for (int i = 1; i < 24; ++i) {
         for (int j = 1; j < 50; ++j) {
-            if (j != 49 && count < 3){
+            if (j != 49 && Dot.size() < 3){
                 srand(time(NULL));
                 if (rand()%23 + 1 == i && rand()%49 + 1 == j) {
                     mvwaddch(playwin, i, j, 'o');
