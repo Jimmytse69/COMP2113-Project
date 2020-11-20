@@ -17,7 +17,7 @@ class Player
         void mvright();
         int getmv();        //get input
         void display();
-        void eatdot();
+        bool eatdot();
         void grow();
 
 
