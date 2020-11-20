@@ -101,7 +101,7 @@ int main()
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
           p -> grow();
-          map -> init_dot(playwin, Dot);}
+          map1 -> init_dot(playwin, Dot);}
         
         p -> display();
         wrefresh(playwin);
