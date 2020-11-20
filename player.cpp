@@ -143,7 +143,7 @@ void Player::grow()
     length++;
 }
 
-bool Player::check_alive() {
+bool Player::check_alive(int a, int b) {
     return (x_coor == 1 || y_coor == 1 || x_coor == 23 || y_coor == 49);
 }
     
