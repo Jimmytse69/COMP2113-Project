@@ -119,7 +119,7 @@ int main()
     if (win == true){
         mvprintw(9, 10, "congrat! you win! ^^");
     }
-    else if (end == true && p -> check_alive()){
+    else if (end == true || p -> check_alive()){
         mvprintw(9, 10, "hope you can do better next time ;)");
     }
 
