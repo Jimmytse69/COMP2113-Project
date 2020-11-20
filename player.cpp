@@ -28,10 +28,10 @@ Player::Player(WINDOW * win, int y, int x, char c, int s)      //define player p
 void Player::mvup()
 {
     mvwaddch(curwin, y_coor, x_coor, ' ');      //cancel out the previous cooradinate of player
-    if (y_coor >= 2)        //check if not out of bound
+    if (y_coor >= 1)        //check if not out of bound
         y_coor--;
     else
-        y_coor = 1;
+        y_coor = 0;
     character = 'v';    //adjust char orientation
     
     int temp1,temp2;
@@ -43,10 +43,10 @@ void Player::mvup()
 void Player::mvdown()
 {
     mvwaddch(curwin, y_coor, x_coor, ' ');
-    if (y_coor <= yMax-3)
+    if (y_coor <= yMax-2)       //set up limit for player not exceed the wall
         y_coor++;
     else
-        y_coor = yMax-2;
+        y_coor = yMax-1;
     character = '^';
     
     int temp1,temp2;
@@ -58,10 +58,10 @@ void Player::mvdown()
 void Player::mvleft()
 {
     mvwaddch(curwin, y_coor, x_coor, ' ');
-    if (x_coor >= 2)
+    if (x_coor >= 1)
         x_coor--;
     else
-        x_coor = 1;
+        x_coor = 0;
     character = '>';
     
     int temp1,temp2;
@@ -73,10 +73,10 @@ void Player::mvleft()
 void Player::mvright()
 {
     mvwaddch(curwin, y_coor, x_coor, ' ');
-    if (x_coor <= xMax-23)      //offset 20 for display score and other info
+    if (x_coor <= xMax-22)      //offset 20 for display score and other info
         x_coor++;
     else
-        x_coor = xMax-22;
+        x_coor = xMax-21;
     character = '<';
     
     int temp1,temp2;
@@ -87,7 +87,7 @@ void Player::mvright()
 
 int Player::getmv()
 {
-    int choice = wgetch(curwin);
+    int choice = wgetch(curwin);    //get player keyboard input
     switch(choice)
     {
         case 'w': case 'W':
