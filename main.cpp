@@ -79,7 +79,6 @@ int main()
     refresh();
     wrefresh(playwin);                          //refresh window to update changes
 
-    vector<dot> Dot;
     mapInfo * map1 = new mapInfo(playwin, Dot);
     //map1.init_dot(playwin, Dot);                     //print dot before game start in the map
 
