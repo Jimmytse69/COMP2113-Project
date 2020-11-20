@@ -124,10 +124,11 @@ void Player::display()
     mvwprintw(curwin, 20, 52, "q: quit");
 }
 
-void Player::eatdot()
+bool Player::eatdot()
 {
     if (chtype mvwinch(curwin, y_coor, x_coor) == 'o'){
-        score += 10;        //10 marks for each 'o'
+        score += 10;            //10 marks for each 'o'
+        return 1;
     }
 }
 
