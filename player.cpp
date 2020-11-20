@@ -145,4 +145,5 @@ void Player::grow()
 
 bool Player::check_alive() {
     return (tail[0].x1 < 1 || tail[0].y1 < 1 || tail[0].x1 > 23 || tail[0].y1 > 49);
+}
     
