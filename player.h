@@ -19,7 +19,7 @@ class Player
         void display();
         bool eatdot();
         void grow();
-        bool check_alive();
+        bool check_alive(int a, int b);
 
 
         int  y_coor, x_coor, xMax, yMax;
