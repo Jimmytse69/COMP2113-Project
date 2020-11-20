@@ -24,6 +24,7 @@ class Player
         char character;
         WINDOW * curwin;
         int score;
+        int length;
 };
 
 
