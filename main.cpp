@@ -90,7 +90,7 @@ int main()
     //auto start = std::chrono::system_clock::now();  //count time begin
   
     do {
-        vecto<dot> Dot;
+        vector<dot> Dot;
         if (Dot.size() <= 3) {
           map1 -> init_dot(playwin, Dot);}
         //auto t = std::chrono::system_clock::now();
