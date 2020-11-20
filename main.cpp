@@ -90,10 +90,9 @@ int main()
 
     //auto start = std::chrono::system_clock::now();  //count time begin
   
-    if (Dot.size() <= 3) {
-      map1 -> init_dot(playwin, Dot);}
-  
     do {
+        if (Dot.size() <= 3) {
+          map1 -> init_dot(playwin, Dot);}
         //auto t = std::chrono::system_clock::now();
         //mvwprintw(playwin, 1, 55, std::chrono::duration_cast<std::chrono::seconds>(end - start).count());
 
