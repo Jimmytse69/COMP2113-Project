@@ -1,5 +1,3 @@
-#include <vector>
-
 #ifndef _MAPINFO_H
 #define _MAPINFO_H
 
@@ -11,8 +9,6 @@ class dot {
 
 class mapInfo{
     public:
-	vector<dot> Dot;
-
 	mapInfo (WINDOW * playwin, std::vector<dot> Dot);
         void init_dot(WINDOW * playwin, std::vector<dot> Dot);
 	void refresh_position(dot Dot);
