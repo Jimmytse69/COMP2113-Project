@@ -110,6 +110,7 @@ int main()
       
         if (p -> check_alive()) {
           end = true;
+          break;
         }
       
         if (p -> score >= 100){
