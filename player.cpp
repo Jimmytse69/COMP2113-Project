@@ -142,3 +142,7 @@ void Player::grow()
     tail.push_back(newSnake);
     length++;
 }
+
+bool Player::check_alive(int a, int b) {
+    return (tail[0].x1 < 1 || tail[0].y1 < 1 || tail[0].x1 > 23 || tail[0].y1 > 49);
+    
