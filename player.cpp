@@ -130,6 +130,7 @@ bool Player::eatdot()
         score += 10;            //10 marks for each 'o'
         return 1;
     }
+    return 0;
 }
 
 void Player::grow()
