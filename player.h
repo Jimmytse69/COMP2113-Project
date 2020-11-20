@@ -25,6 +25,11 @@ class Player
         WINDOW * curwin;
         int score;
         int length;
+    
+        struct Snake {
+            int y1, x1, wid, hgt;
+        };
+        std::deque <Snake> tail;
 };
 
 
