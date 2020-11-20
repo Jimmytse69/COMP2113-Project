@@ -1,3 +1,5 @@
+#include <vector>
+
 #ifndef _MAPINFO_H
 #define _MAPINFO_H
 
