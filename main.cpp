@@ -78,7 +78,8 @@ int main()
     box(playwin, 0, 0);
     refresh();
     wrefresh(playwin);                          //refresh window to update changes
-
+  
+    vector<dot> Dot;
     mapInfo * map1 = new mapInfo(playwin, Dot);
     //map1.init_dot(playwin, Dot);                     //print dot before game start in the map
 
@@ -90,7 +91,6 @@ int main()
     //auto start = std::chrono::system_clock::now();  //count time begin
   
     do {
-        vector<dot> Dot;
         if (Dot.size() <= 3) {
           map1 -> init_dot(playwin, Dot);}
         //auto t = std::chrono::system_clock::now();
