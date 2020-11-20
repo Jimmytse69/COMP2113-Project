@@ -90,7 +90,7 @@ int main()
 
     //auto start = std::chrono::system_clock::now();  //count time begin
   
-    if (Dot.size <= 3) {
+    if (Dot.size() <= 3) {
       map1 -> init_dot(playwin, Dot);}
   
     do {
