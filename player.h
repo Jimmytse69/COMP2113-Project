@@ -17,6 +17,7 @@ class Player
         int getmv();        //get input
         void display();
         void eatdot();
+        void grow();
 
 
         int  y_coor, x_coor, xMax, yMax;
