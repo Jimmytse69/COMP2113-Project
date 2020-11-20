@@ -15,7 +15,14 @@ Player::Player(WINDOW * win, int y, int x, char c, int s)      //define player p
     getmaxyx(curwin, yMax, xMax);
     character = c;              //it represent player control character
     s = score;
+    length = 1;
+    
+    Snake snk;
+    snk.x1 = x;
+    snk.y1 = y;
 
+    tail.push_back(snk);
+    
 }
 
 void Player::mvup()
@@ -26,6 +33,11 @@ void Player::mvup()
     else
         y_coor = 1;
     character = 'v';    //adjust char orientation
+    
+    int temp1,temp2;
+    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
+    tail.push_front(newSnake);
+    tail.pop_back(); 
 }
 
 void Player::mvdown()
@@ -36,6 +48,11 @@ void Player::mvdown()
     else
         y_coor = yMax-2;
     character = '^';
+    
+    int temp1,temp2;
+    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
+    tail.push_front(newSnake);
+    tail.pop_back();
 }
 
 void Player::mvleft()
@@ -46,6 +63,11 @@ void Player::mvleft()
     else
         x_coor = 1;
     character = '>';
+    
+    int temp1,temp2;
+    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
+    tail.push_front(newSnake);
+    tail.pop_back();
 }
 
 void Player::mvright()
@@ -56,6 +78,11 @@ void Player::mvright()
     else
         x_coor = xMax-22;
     character = '<';
+    
+    int temp1,temp2;
+    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
+    tail.push_front(newSnake);
+    tail.pop_back();
 }
 
 int Player::getmv()
@@ -102,4 +129,14 @@ void Player::eatdot()
     if (chtype mvwinch(curwin, y_coor, x_coor) == 'o'){
         score += 10;        //10 marks for each 'o'
     }
+}
+
+void Player::grow()
+{
+    //Create new length in the current position
+    Snake newSnake;
+    newSnake.x1 = tail[length-1].x1;
+    newSnake.y1 = tail[length-1].y1;
+    tail.push_back(newSnake);
+    length++;
 }
