@@ -28,7 +28,7 @@ void mapInfo::init_dot(WINDOW * playwin, std::vector<dot> Dot)
                 }
             }
             else if (j == 49) {
-                mvwaddch(playwin, i, j, '#');   //print border (right hand side for score broad)
+                mvwaddch(playwin, i, j, '|');   //print border (right hand side for score broad)
             }
 
         }
