@@ -27,7 +27,7 @@ class Player
         int length;
     
         struct Snake {
-            int y1, x1, wid, hgt;
+            int y1, x1;
         };
         std::deque <Snake> tail;
 };
