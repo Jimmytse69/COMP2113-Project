@@ -9,6 +9,7 @@ class dot {
 
 class mapInfo{
     public:
+	vector<dot> Dot;
 
 	mapInfo (WINDOW * playwin, std::vector<dot> Dot);
         void init_dot(WINDOW * playwin, std::vector<dot> Dot);
@@ -20,7 +21,6 @@ class mapInfo{
         int directions[8] = {1,2,3,4,5,6,7,8};          
 
 };
-
 
 
 #endif
