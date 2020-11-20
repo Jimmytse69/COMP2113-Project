@@ -26,6 +26,7 @@ class Player
         WINDOW * curwin;
         int score;
         int length;
+        bool border;
     
         struct Snake {
             int y1, x1;
