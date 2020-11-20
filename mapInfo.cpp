@@ -25,8 +25,6 @@ void mapInfo::init_dot(WINDOW * playwin, std::vector<dot> Dot)
                     D.x_coor = j;
                     D.y_coor = i;
                     Dot.push_back(D);
-
-                    count++;
                 }
             }
             else if (j == 49) {
