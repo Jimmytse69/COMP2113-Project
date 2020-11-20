@@ -3,6 +3,7 @@
 
 
 #include <ncurses.h>
+#include <deque>
 #include "player.h"
 
 
