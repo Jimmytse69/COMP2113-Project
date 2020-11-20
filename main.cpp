@@ -107,6 +107,11 @@ int main()
         wrefresh(playwin);
 
         obj_refresh(player_Location, p -> y_coor, p -> x_coor);     //refresh player location, in obj_init.h
+      
+        if (p -> check_alive(p -> x_coor, p -> y_coor)) {
+          end = true;
+        }
+      
         if (p -> score >= 100){
             win = true;
             break;
@@ -119,7 +124,7 @@ int main()
     if (win == true){
         mvprintw(9, 10, "congrat! you win! ^^");
     }
-    else if (end == true || p -> check_alive()){
+    else if (end == true){
         mvprintw(9, 10, "hope you can do better next time ;)");
     }
 
