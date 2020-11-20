@@ -90,13 +90,19 @@ int main()
 
     //auto start = std::chrono::system_clock::now();  //count time begin
   
+    int count = 0;
     do {
-        if (Dot.size() <= 3) {
-          map1 -> init_dot(playwin, Dot);}
+        if (count == 0) {
+          map1 -> init_dot(playwin, Dot);
+          count++;}
+      
         //auto t = std::chrono::system_clock::now();
         //mvwprintw(playwin, 1, 55, std::chrono::duration_cast<std::chrono::seconds>(end - start).count());
 
-        p -> eatdot();                   //check if player eaten a 'o', 10 marks for each
+        if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
+          p -> grow();
+          map -> init_dot(playwin, Dot);}
+        
         p -> display();
         wrefresh(playwin);
 
