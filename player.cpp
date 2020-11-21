@@ -138,3 +138,9 @@ bool Player::check_alive() {
     return (y_coor == 0 || x_coor == 0 || y_coor == 24 || x_coor == 49);
 }
     
+
+bool Player::overlap() {
+    if (chtype mvwinch(curwin, y_coor, x_coor) != ' ' && chtype mvwinch(curwin, y_coor, x_coor) != 'o'){
+        return true;}
+    return false;
+}
