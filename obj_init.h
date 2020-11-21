@@ -22,10 +22,15 @@ int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc
         occupied.push_back(x_coor);}
        
     else {
-        occupied.insert(occupied.begin(), x_coor);
-        occupied.insert(occupied.begin(), y_coor);
+        std::vector<int> copy;
+        
+        copy.push_back(y_coor);
+        copy.push_back(x_coor);
+        for (int i = 0; i < occupied.size(); i++) {
+            copy.push_back(occupied[i]);
+        }
+        occupied = copy;
     }
-    
     return(occupied.size()/2);       //retunr number of obj
 }
 
