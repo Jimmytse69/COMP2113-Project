@@ -136,16 +136,6 @@ bool Player::eatdot()
     return 0;
 }
 
-void Player::grow()
-{
-    //Create new length in the current position
-    Snake newSnake;
-    newSnake.x1 = tail[length-1].x1;
-    newSnake.y1 = tail[length-1].y1;
-    tail.push_back(newSnake);
-    length++;
-}
-
 bool Player::check_alive() {
-    return (y_coor == 0 || x_coor == 0 || y_coor == 23 || x_coor == 49);
+    return (y_coor == 0 || x_coor == 0 || y_coor == 24 || x_coor == 49);
 }

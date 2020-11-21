@@ -98,13 +98,16 @@ int main()
 
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
+
           p -> grow();
           length++;
           len_inc = true;
+          
           map1 -> init_dot(playwin, Dot);}
 
         p -> display(player_Location);
         wrefresh(playwin);
+
 
         obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
         len_inc = false;
