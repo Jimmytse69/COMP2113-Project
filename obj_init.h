@@ -34,11 +34,11 @@ int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc
     return(occupied.size()/2);       //retunr number of obj
 }
 
-bool obj_overlap(std::vector<int> &occupied) 
+bool obj_overlap(std::vector<int> coor, int y, int x) 
 {
-    char a = occupied[occupied.size()-1];
-    if (a == '>' || a == '<' || a == '^' || a == 'v') {
-        return true;
+    for (int i = 0; i < coor; i+=2) {
+        if (coor[i] == y && coor[i+1] == x) {
+            return true;
     }
     return false;
 }
