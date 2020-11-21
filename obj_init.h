@@ -36,7 +36,7 @@ int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc
 
 bool obj_overlap(std::vector<int> coor, int y, int x) 
 {
-    for (int i = 0; i < coor.size(); i+=2) {
+    for (int i = 2; i < coor.size(); i+=2) {
         if (coor[i] == y && coor[i+1] == x) {
             return true;}
     }
