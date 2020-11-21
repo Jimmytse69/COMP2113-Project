@@ -24,14 +24,14 @@
         A dynamic variables are created for storing the user position and updating it at all time.
 
 4. File input/output
-        When user press '1', then the game will be paused and a manual of options would appear (Include the save option or restart)
-        When user press '1' again, the game will continue (User will be given an additional 3 seconds to prepare)
-        When user press '2', the game status will be printed out (Level of difficulty, score, and additional power user gained)
+        a new file win_steak.txt will created if there is no such file.
+        win_steak.txt will update the no. of consecutive win dependce on original win_steak if player win again.(++)
+        if player lose, win_steak.txt will display 0 win_steak again.
+        
    
 5. Program codes in multiple files
-        besides the main.cpp for geting usage input (e.g. wasd for direction / '1' for pause game in every 0.1 sec interval)
-        most of other function/code segment may put in other .cpp/.h and using Makefile to compile it
-        these function maybe the algorithms to control the ghost's movement (to chase player), the save function, generation of random event
+        there are multiple \*.cpp and \*.h files utilize for different function. (e.g. player.cpp mainly for handling player movement)
+        using Makefile to link all the object code from all these complied (-c) file to final main file.
         
 ## External library used:
 * ncurses:
