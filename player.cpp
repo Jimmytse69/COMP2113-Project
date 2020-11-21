@@ -3,6 +3,7 @@
 
 
 #include <ncurses.h>
+#include <vector>
 #include "player.h"
 
 
