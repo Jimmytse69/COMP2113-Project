@@ -80,6 +80,7 @@ int main()
     wrefresh(playwin);                          //refresh window to update changes
 
     vector<dot> Dot;
+    vector<int> coor;
     mapInfo * map1 = new mapInfo(playwin, Dot);
     //map1.init_dot(playwin, Dot);                     //print dot before game start in the map
 
@@ -89,6 +90,8 @@ int main()
     bool len_inc = true;  // Indicate length change
   
     Player * p = new Player(playwin, player_start_y, player_start_x, '<', score, length);      //create pac-man in playwin, coordinate(y, x), symbol, score
+    coor.push_back(player_start_y);
+    coor.push_back(player_start_x);
 
     do {      
         if (count) {
@@ -103,11 +106,13 @@ int main()
       
         p -> display(player_Location);
         wrefresh(playwin);
+        coor.push_back(p -> y_coor);
+        coor.push_back(p -> x_coor);
       
         obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
         len_inc = true;
 
-        if (p -> check_alive()) {
+        if (p -> check_alive() || obj_overlap(coor)) {
           end = true;
           break;
         }
