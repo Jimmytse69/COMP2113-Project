@@ -38,4 +38,15 @@
         most of other function/code segment may put in other .cpp/.h and using Makefile to compile it
         these function maybe the algorithms to control the ghost's movement (to chase player), the save function, generation of random event
         
+     External library used:
+          ncurses: https://invisible-island.net/ncurses/announce.html
+          -downloaded from https://github.com/mirror/ncurses
+        
+     Reference (or directly copied): 
+          https://github.com/Colton-Ko/tetris-in-ncurses (buildncurses.sh and Makefile)
+          https://www.youtube.com/watch?v=lV-OPQhPvSM&list=PL2U2TQ__OrQ8jTf0_noNKtHMuYlyxQl4v (ncurses library tutorial)
+          
+          Special thanks to https://github.com/Colton-Ko for teaching and open-sourcing the method to build(and complier) ncruses external library with only user permission.
+          
+        
 */
