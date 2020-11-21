@@ -1,18 +1,18 @@
-/*   COMP-2113-Course-Project
+     # COMP-2113-Course-Project
      Member 1: Wong Ming Yui Lucas (3035568037)
      Member 2: Tse Chung Wan (3035689324)
      
      Game Discription of Pac-Man:
 
 
-     How to play:
+     ## How to play:
      1. open new terminal in that main directory, type the following
      2. make (need to wait 1-2 mins)
      3. ./main
      4. enjoy the game
      
 
-     Features to be implemented:
+     ## Features to be implemented:
      1. Generation of random game sets or events
         Randomly generates the number of ghost pawns, which ranges from 3 - 6.
         Blue dots would give user random additional power (Enhanced agility / Invisible mode / Sword to kill ghoats from the back)
@@ -38,15 +38,13 @@
         most of other function/code segment may put in other .cpp/.h and using Makefile to compile it
         these function maybe the algorithms to control the ghost's movement (to chase player), the save function, generation of random event
         
-     External library used:
+     ## External library used:
           ncurses: https://invisible-island.net/ncurses/announce.html
           -downloaded from https://github.com/mirror/ncurses
         
-     Reference (or directly copied): 
+     ## Reference (or directly copied): 
           https://github.com/Colton-Ko/tetris-in-ncurses (buildncurses.sh and Makefile)
           https://www.youtube.com/watch?v=lV-OPQhPvSM&list=PL2U2TQ__OrQ8jTf0_noNKtHMuYlyxQl4v (ncurses library tutorial)
           
           Special thanks to https://github.com/Colton-Ko for teaching and open-sourcing the method to build(and complier) ncruses external library with only user permission.
           
-        
-*/
