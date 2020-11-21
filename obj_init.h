@@ -16,7 +16,7 @@ int obj_refresh(std::vector<int> occupied, int y_coor, int x_coor)  //indicated 
     std::vector<int> copy;
     
     copy.push_back(y_coor);
-    copy_push_back(x_coor);
+    copy.push_back(x_coor);
     for (int i = 0; i < occupied.size(); i++) {
         copy.push_back(occupied[i]);
     }
