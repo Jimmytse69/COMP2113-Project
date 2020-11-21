@@ -78,42 +78,45 @@ int main()
     box(playwin, 0, 0);
     refresh();
     wrefresh(playwin);                          //refresh window to update changes
-  
+
     vector<dot> Dot;
     mapInfo * map1 = new mapInfo(playwin, Dot);
     //map1.init_dot(playwin, Dot);                     //print dot before game start in the map
 
+    int length = 1;    //define player size with length 1
+    int score = 0;
+    bool len_inc = false;   //indicate length change
+    Player * p = new Player(playwin, player_start_y, player_start_x, '<', score, length);      //create pac-man in playwin, coordinate(y, x), symbol, score
 
-    Player * p = new Player(playwin, player_start_y, player_start_x, '<', -48);      //create pac-man in playwin, coordinate(y, x), symbol, score
 
 
-
-    //auto start = std::chrono::system_clock::now();  //count time begin
-  
     int count = 0;
     do {
         if (count == 0) {
           map1 -> init_dot(playwin, Dot);
           count++;}
-      
-        //auto t = std::chrono::system_clock::now();
-        //mvwprintw(playwin, 1, 55, std::chrono::duration_cast<std::chrono::seconds>(end - start).count());
+
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
-          obj_init(p -> y_coor, p -> x_coor);
+
+          p -> grow();
+          length++;
+          len_inc = true;
+          
           map1 -> init_dot(playwin, Dot);}
-        
-        p -> display();
+
+        p -> display(player_Location);
         wrefresh(playwin);
-        
-        if (p -> eatdot() == false) {
-          obj_refresh(player_Location, p -> y_coor, p -> x_coor);}     //refresh player location, in obj_init.h
-      
+
+
+        obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
+        len_inc = false;
+
         if (p -> check_alive()) {
           end = true;
           break;
         }
-      
+
         if (p -> score >= 100){
             win = true;
             break;

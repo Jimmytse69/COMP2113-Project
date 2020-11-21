@@ -9,14 +9,14 @@
 class Player
 {
     public:
-        Player(WINDOW * win, int y_coor, int x_coor, char c, int score);    //function overloading (not sure)
+        Player(WINDOW * win, int y_coor, int x_coor, char c, int score, int length);    //function overloading (not sure)
 
         void mvup();        //move user
         void mvdown();
         void mvleft();
         void mvright();
         int getmv();        //get input
-        void display();
+        void display(std::vector<int> &player_Location);
         bool eatdot();
         bool check_alive();
 
@@ -24,8 +24,9 @@ class Player
         int  y_coor, x_coor, xMax, yMax;
         char character;
         WINDOW * curwin;
-        int score;
         int length;
+	int score;
+        int size;
         bool border;
     
         struct Snake {

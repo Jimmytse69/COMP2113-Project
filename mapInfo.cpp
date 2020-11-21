@@ -20,7 +20,7 @@ void mapInfo::init_dot(WINDOW * playwin, std::vector<dot> Dot)
         for (int j = 1; j < 50; ++j) {
             if (j != 49 && Dot.size() < 2){
                 srand(time(NULL));
-                if (rand()%23 + 1 == i && rand()%49 + 1 == j) {
+                if (rand()%22 + 1 == i && rand()%48 + 1 == j) {
                     mvwaddch(playwin, i, j, 'o');
                     D.x_coor = j;
                     D.y_coor = i;

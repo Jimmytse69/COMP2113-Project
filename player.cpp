@@ -8,7 +8,7 @@
 
 
 
-Player::Player(WINDOW * win, int y, int x, char c, int s)      //define player parameters
+Player::Player(WINDOW * win, int y, int x, char c, int s, int length)      //define player parameters
 {
     curwin = win;
     y_coor = y;
@@ -17,13 +17,13 @@ Player::Player(WINDOW * win, int y, int x, char c, int s)      //define player p
     character = c;              //it represent player control character
     s = score;
     length = 1;
-    
+
     Snake snk;
     snk.x1 = x;
     snk.y1 = y;
 
     tail.push_back(snk);
-    
+
 }
 
 void Player::mvup()
@@ -34,11 +34,11 @@ void Player::mvup()
     else
         y_coor = 0;
     character = 'v';    //adjust char orientation
-    
+
     int temp1,temp2;
     Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
     tail.push_front(newSnake);
-    tail.pop_back(); 
+    tail.pop_back();
 }
 
 void Player::mvdown()
@@ -49,7 +49,7 @@ void Player::mvdown()
     else
         y_coor = yMax-1;
     character = '^';
-    
+
     int temp1,temp2;
     Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
     tail.push_front(newSnake);
@@ -64,7 +64,7 @@ void Player::mvleft()
     else
         x_coor = 0;
     character = '>';
-    
+
     int temp1,temp2;
     Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
     tail.push_front(newSnake);
@@ -79,7 +79,7 @@ void Player::mvright()
     else
         x_coor = xMax-21;
     character = '<';
-    
+
     int temp1,temp2;
     Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
     tail.push_front(newSnake);
@@ -107,9 +107,11 @@ int Player::getmv()
     return choice;
 }
 
-void Player::display()
+void Player::display(std::vector<int> &player_Location)
 {
-    mvwaddch(curwin, y_coor, x_coor, character);    //move and add char in that current window
+    for (int i = 0; i < player_Location.size(); i+=2) {
+      mvwaddch(curwin, player_Location[0], player_Location[1], character);    //move and add char in that current window
+    }
 
     mvwprintw(curwin, 5, 55, "Score: %d", score);
 
@@ -137,4 +139,3 @@ bool Player::eatdot()
 bool Player::check_alive() {
     return (y_coor == 0 || x_coor == 0 || y_coor == 24 || x_coor == 49);
 }
-    
