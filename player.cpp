@@ -134,13 +134,13 @@ bool Player::eatdot()
     return 0;
 }
 
-void Player::grow(std::vector<int> occupied, int y_coor, int x_coor)
+int Player::grow(std::vector<int> occupied, int y_coor, int x_coor)
 {
     //Create new length in the current position
     occupied.push_back(y_coor);
     occupied.push_back(x_coor);
     
-    return 1;
+    return (occupied.size()/2);
 }
 
 bool Player::check_alive() {
