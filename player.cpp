@@ -133,14 +133,13 @@ bool Player::eatdot()
     return 0;
 }
 
-void Player::grow()
+void Player::grow(std::vector<int> occupied, int y_coor, int x_coor)
 {
     //Create new length in the current position
-    Snake newSnake;
-    newSnake.x1 = tail[length-1].x1;
-    newSnake.y1 = tail[length-1].y1;
-    tail.push_back(newSnake);
-    length++;
+    occupied.push_back(y_coor);
+    occupied.push_back(x_coor);
+    
+    return  (occupied.size()/2);
 }
 
 bool Player::check_alive() {
