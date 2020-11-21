@@ -16,14 +16,7 @@ Player::Player(WINDOW * win, int y, int x, char c, int s, int length)      //def
     getmaxyx(curwin, yMax, xMax);
     character = c;              //it represent player control character
     s = score;
-    length = 1;
-
-    Snake snk;
-    snk.x1 = x;
-    snk.y1 = y;
-
-    tail.push_back(snk);
-
+    length = length;
 }
 
 void Player::mvup()
@@ -34,11 +27,6 @@ void Player::mvup()
     else
         y_coor = 0;
     character = 'v';    //adjust char orientation
-
-    int temp1,temp2;
-    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
-    tail.push_front(newSnake);
-    tail.pop_back();
 }
 
 void Player::mvdown()
@@ -49,11 +37,6 @@ void Player::mvdown()
     else
         y_coor = yMax-1;
     character = '^';
-
-    int temp1,temp2;
-    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
-    tail.push_front(newSnake);
-    tail.pop_back();
 }
 
 void Player::mvleft()
@@ -64,11 +47,6 @@ void Player::mvleft()
     else
         x_coor = 0;
     character = '>';
-
-    int temp1,temp2;
-    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
-    tail.push_front(newSnake);
-    tail.pop_back();
 }
 
 void Player::mvright()
@@ -79,11 +57,6 @@ void Player::mvright()
     else
         x_coor = xMax-21;
     character = '<';
-
-    int temp1,temp2;
-    Snake newSnake = {tail[0].x1 + x_coor, tail[0].y1 + y_coor};
-    tail.push_front(newSnake);
-    tail.pop_back();
 }
 
 int Player::getmv()
