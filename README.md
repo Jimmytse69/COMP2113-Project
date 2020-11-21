@@ -38,7 +38,7 @@
         these function maybe the algorithms to control the ghost's movement (to chase player), the save function, generation of random event
         
 ## External library used:
-*ncurses:
+* ncurses:
      https://invisible-island.net/ncurses/announce.html
      -downloaded from https://github.com/mirror/ncurses
      
