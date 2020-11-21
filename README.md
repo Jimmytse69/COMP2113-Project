@@ -3,7 +3,7 @@
 * Member 2: Tse Chung Wan (3035689324)
 
 ## Game Discription of Snake
-
+The user, as the snake, has to eat apples (represented by 'o') to get score. If it attains 100 score, then it will win the game. If it crushes with the wall, then it will lose. Use WSAD to control.
 
 ## How to play:
 * open new terminal in that main directory, type the following
