@@ -88,8 +88,6 @@ int main()
     bool len_inc = false;   //indicate length change
     Player * p = new Player(playwin, player_start_y, player_start_x, '<', score, length);      //create pac-man in playwin, coordinate(y, x), symbol, score
 
-
-
     int count = 0;
     do {
         if (count == 0) {
@@ -104,6 +102,11 @@ int main()
           len_inc = true;
           
           map1 -> init_dot(playwin, Dot);}
+        
+        if (p -> overlap()) {
+          end = true;
+          break;
+        }
 
         p -> display(player_Location);
         wrefresh(playwin);
