@@ -142,7 +142,7 @@ bool Player::check_alive() {
 
 bool Player::overlap()
 {
-    if (chtype mvwinch(curwin, y_coor, x_coor) != '' && chtype mvwinch(curwin, y_coor, x_coor) != 'o') {
+    if (chtype mvwinch(curwin, y_coor, x_coor) != ' ' && chtype mvwinch(curwin, y_coor, x_coor) != 'o') {
         return true;
     }
     return false;
