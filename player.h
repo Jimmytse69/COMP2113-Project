@@ -19,6 +19,7 @@ class Player
         void display();
         bool eatdot();
         bool check_alive();
+        bool overlap();
 
 
         int  y_coor, x_coor, xMax, yMax;
