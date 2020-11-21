@@ -14,14 +14,13 @@ std::vector<int> obj_init(int y_coor, int x_coor)
 
 int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc)  //indicated object (e.g. player occurpied that cooridinate, in terms of (y,x))
 {
-    if (len_inc){
-      occupied.pop_back();
-      occupied.pop_back();
-      occupied.push_back(y_coor);
-      occupied.push_back(x_coor);
-    }
+    occupied.pop_back();
+    occupied.pop_back();
     
-    else {
+    occupied.push_back(y_coor);
+    occupied.push_back(x_coor);
+    
+    if (len_inc) {
       std::vector<int> copy;        //for len inc, need push first coor to head frist (becoz no push_front function)
         
       copy.push_back(y_coor);
