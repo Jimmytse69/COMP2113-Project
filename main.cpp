@@ -100,12 +100,13 @@ int main()
           len_inc = false;
    
           map1 -> init_dot(playwin, Dot);}
-            
-        p -> display(player_Location);
-        wrefresh(playwin);
       
         obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
         len_inc = true;
+      
+        p -> display(player_Location);
+        wrefresh(playwin);
+  
 
         if (p -> check_alive()) {
           end = true;
