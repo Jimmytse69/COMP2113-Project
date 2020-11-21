@@ -40,7 +40,7 @@
 ## External library used:
 * ncurses:
      https://invisible-island.net/ncurses/announce.html
-     -downloaded from https://github.com/mirror/ncurses
+     ,cloned from https://github.com/mirror/ncurses
      
 ## Reference (or directly copied)
      https://github.com/Colton-Ko/tetris-in-ncurses (buildncurses.sh and Makefile)
