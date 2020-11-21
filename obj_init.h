@@ -23,7 +23,11 @@ int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc
        
     else {
         occupied.insert(occupied.begin(), x_coor);
-        occupied.insert(occupied.begin(), y_coor);}
+        occupied.insert(occupied.begin(), y_coor);
+    
+        occupied.pop_back();
+        occupied.pop_back();
+    }
     
     return(occupied.size()/2);       //retunr number of obj
 }
