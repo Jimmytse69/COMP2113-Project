@@ -85,7 +85,7 @@ int main()
 
     int length = 1;    //define player size with length 1
     int score = 0;
-    bool len_inc = false;   //indicate length change
+    bool len_inc = true;   //indicate length change
     Player * p = new Player(playwin, player_start_y, player_start_x, '<', score, length);      //create pac-man in playwin, coordinate(y, x), symbol, score
 
 
@@ -99,15 +99,16 @@ int main()
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
           length++;
-          len_inc = true;
+          len_inc = false;
+          obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
    
           map1 -> init_dot(playwin, Dot);}
             
         p -> display(player_Location);
         wrefresh(playwin);
-
+      
+        len_inc = true;
         obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
-        len_inc = false;
 
         if (p -> check_alive()) {
           end = true;
