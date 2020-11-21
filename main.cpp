@@ -96,7 +96,7 @@ int main()
           count = false;}
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
-          length++;
+          // length++;
           len_inc = true;
    
           map1 -> init_dot(playwin, Dot);}
