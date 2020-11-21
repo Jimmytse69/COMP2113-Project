@@ -12,7 +12,7 @@ std::vector<int> obj_init(int y_coor, int x_coor)
     return occupied;
 }
 
-int obj_refresh(std::vector<int> occupied, int y_coor, int x_coor, bool len_inc)  //indicated object (e.g. player occurpied that cooridinate, in terms of (y,x))
+int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc)  //indicated object (e.g. player occurpied that cooridinate, in terms of (y,x))
 {
     if (len_inc) {
         occupied.pop_back();
