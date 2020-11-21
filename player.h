@@ -18,7 +18,6 @@ class Player
         int getmv();        //get input
         void display();
         bool eatdot();
-        int grow(std::vector<int> occupied, int y_coor, int x_coor);
         bool check_alive();
 
 
