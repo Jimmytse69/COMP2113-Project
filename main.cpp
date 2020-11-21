@@ -99,7 +99,6 @@ int main()
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
 
-          p -> grow();
           length++;
           len_inc = true;
           
