@@ -144,6 +144,6 @@ void Player::grow()
 }
 
 bool Player::check_alive() {
-    return (y_coor == 0 || x_coor == 0 || y_coor == 23 || x_coor == 49);
+    return (y_coor == 0 || x_coor == 0 || y_coor == 24 || x_coor == 49);
 }
     
