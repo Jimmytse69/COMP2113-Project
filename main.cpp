@@ -109,7 +109,7 @@ int main()
         if (p -> eatdot() == false) {
           obj_refresh(player_Location, p -> y_coor, p -> x_coor);}     //refresh player location, in obj_init.h
       
-        if (p -> check_alive()) {
+        if (p -> check_alive() || p -> overlap()) {
           end = true;
           break;
         }
