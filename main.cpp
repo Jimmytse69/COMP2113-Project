@@ -112,7 +112,7 @@ int main()
         obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
         len_inc = true;
 
-        if (p -> check_alive() || obj_overlap(coor)) {
+        if (p -> check_alive() || obj_overlap(coor, p -> y_coor, p -> x_coor)) {
           end = true;
           break;
         }
