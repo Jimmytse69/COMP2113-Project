@@ -38,7 +38,7 @@ bool obj_overlap(std::vector<int> coor, int y, int x)
 {
     for (int i = 0; i < coor.size(); i+=2) {
         if (coor[i] == y && coor[i+1] == x) {
-            return true;
+            return true;}
     }
     return false;
 }
