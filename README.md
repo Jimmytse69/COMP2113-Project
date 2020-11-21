@@ -5,7 +5,12 @@
      Game Discription of Pac-Man:
 
 
-
+     How to play:
+     1. open new terminal in that main directory, type the following
+     2. make (need to wait 1-2 mins)
+     3. ./main
+     4. enjoy the game
+     
 
      Features to be implemented:
      1. Generation of random game sets or events
