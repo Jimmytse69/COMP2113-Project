@@ -100,7 +100,7 @@ int main()
         //mvwprintw(playwin, 1, 55, std::chrono::duration_cast<std::chrono::seconds>(end - start).count());
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
-          p -> grow(player_location, p -> y_coor, p -> x_coor);
+          p -> grow(player_Location, p -> y_coor, p -> x_coor);
           map1 -> init_dot(playwin, Dot);}
         
         p -> display();
