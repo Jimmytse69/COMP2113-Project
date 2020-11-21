@@ -13,19 +13,15 @@
 
 ## Features to be implemented:
 1. Generation of random game sets or events
-        Randomly generates the number of ghost pawns, which ranges from 3 - 6.
-        Blue dots would give user random additional power (Enhanced agility / Invisible mode / Sword to kill ghoats from the back)
-        Red dots would give ghosts random additional power (Duplicate itself / half-Invisible mode / shoot fireballs)
-        In level 3, roadblocks will be randomly generated during the game
+        The game generates one dot on the board randomly. 
+        The initial position of the user is randomly assigned. 
+        The position of the regenerated dots are randomly made.
 
 2. Data structures for storing game status
-        All variables/parameters (e.g. position/ level/ map data) of current game status (i.e. when user selected save after press '1') will store in save.txt by File input stream
-       these variables/parameters may stored using different types of data structures (e.g. using 2D array for map data, struct/class for each ghost's position, status, etc...)
+        Used vector to store the size of user's occupied space.
 
 3. Dynamic memory management
-        Users may pause their game and save it anytime. 
-        The game will ask user whether he would like to overwrite the last save or open a new save
-        The score and general abilities of a user will be shown when he read his saved file
+        A dynamic variables are created for storing the user position and updating it at all time.
 
 4. File input/output
         When user press '1', then the game will be paused and a manual of options would appear (Include the save option or restart)
