@@ -35,4 +35,14 @@ int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc
     return(occupied.size()/2);       //retunr number of obj
 }
 
+bool obj_overlap(std::vector<int> &occupied, int y_coor, int x_coor) 
+{
+    for (int i = 0; i < occupied.size(); i++) {
+        if (occupied[i] == y_coor && occupied[i+1] == x_coor) {
+            return true;
+        }
+    }
+    return false;
+}
+
 #endif
