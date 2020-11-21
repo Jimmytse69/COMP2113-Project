@@ -104,7 +104,7 @@ int main()
         p -> display(player_Location);
         wrefresh(playwin);
       
-        p -> obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
+        obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
         len_inc = true;
 
         if (p -> check_alive()) {
