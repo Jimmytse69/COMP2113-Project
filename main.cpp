@@ -78,40 +78,42 @@ int main()
     box(playwin, 0, 0);
     refresh();
     wrefresh(playwin);                          //refresh window to update changes
-
+  
     vector<dot> Dot;
     mapInfo * map1 = new mapInfo(playwin, Dot);
     //map1.init_dot(playwin, Dot);                     //print dot before game start in the map
 
-    int length = 1;    //define player size with length 1
-    int score = 0;
-    bool count = true;
-    bool len_inc = true;  // Indicate length change
-  
-    Player * p = new Player(playwin, player_start_y, player_start_x, '<', score, length);      //create pac-man in playwin, coordinate(y, x), symbol, score
 
-    do {      
-        if (count) {
+    Player * p = new Player(playwin, player_start_y, player_start_x, '<', -48);      //create pac-man in playwin, coordinate(y, x), symbol, score
+
+
+
+    //auto start = std::chrono::system_clock::now();  //count time begin
+  
+    int count = 0;
+    do {
+        if (count == 0) {
           map1 -> init_dot(playwin, Dot);
-          count = false;}
+          count++;}
+      
+        //auto t = std::chrono::system_clock::now();
+        //mvwprintw(playwin, 1, 55, std::chrono::duration_cast<std::chrono::seconds>(end - start).count());
 
         if (p -> eatdot()) {  //check if player eaten a 'o', 10 marks for each
-          length++;
-          len_inc = false;
-   
+          obj_init(p -> y_coor, p -> x_coor);
           map1 -> init_dot(playwin, Dot);}
-      
-        p -> display(player_Location);
+        
+        p -> display();
         wrefresh(playwin);
-
-        obj_refresh(player_Location, p -> y_coor, p -> x_coor, len_inc);     //refresh player location, in obj_init.h
-        len_inc = true;
-
+        
+        if (p -> eatdot() == false) {
+          obj_refresh(player_Location, p -> y_coor, p -> x_coor);}     //refresh player location, in obj_init.h
+      
         if (p -> check_alive()) {
           end = true;
           break;
         }
-
+      
         if (p -> score >= 100){
             win = true;
             break;
