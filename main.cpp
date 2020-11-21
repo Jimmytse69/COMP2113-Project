@@ -85,7 +85,7 @@ int main()
 
     int length = 1;    //define player size with length 1
     int score = 0;
-    bool count. = true;
+    bool count = true;
   
     Player * p = new Player(playwin, player_start_y, player_start_x, '<', score, length);      //create pac-man in playwin, coordinate(y, x), symbol, score
 
