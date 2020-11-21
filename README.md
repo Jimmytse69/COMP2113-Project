@@ -13,23 +13,28 @@
 
 ## Features to be implemented:
 1. Generation of random game sets or events
+
         The game generates one dot on the board randomly. 
         The initial position of the user is randomly assigned. 
         The position of the regenerated dots are randomly made.
 
 2. Data structures for storing game status
+
         Used vector to store the size of user's occupied space.
 
 3. Dynamic memory management
+
         A dynamic variables are created for storing the user position and updating it at all time.
 
 4. File input/output
+
         a new file win_steak.txt will created if there is no such file.
         win_steak.txt will update the no. of consecutive win dependce on original win_steak if player win again.(++)
         if player lose, win_steak.txt will display 0 win_steak again.
         
    
 5. Program codes in multiple files
+
         there are multiple \*.cpp and \*.h files utilize for different function. (e.g. player.cpp mainly for handling player movement)
         using Makefile to link all the object code from all these complied (-c) file to final main file.
         
