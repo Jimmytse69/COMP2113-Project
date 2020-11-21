@@ -105,8 +105,9 @@ int main()
         
         p -> display();
         wrefresh(playwin);
-
-        obj_refresh(player_Location, p -> y_coor, p -> x_coor);     //refresh player location, in obj_init.h
+        
+        if (p -> eatdot() == false) {
+          obj_refresh(player_Location, p -> y_coor, p -> x_coor);}     //refresh player location, in obj_init.h
       
         if (p -> check_alive()) {
           end = true;
