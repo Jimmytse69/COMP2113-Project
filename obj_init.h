@@ -22,6 +22,9 @@ int obj_refresh(std::vector<int> &occupied, int y_coor, int x_coor, bool len_inc
     }
     else {
       std::vector<int> copy;        //for len inc, need push first coor to head frist (becoz no push_front function)
+      occupied.pop_back();
+      occupied.pop_back();
+        
       copy.push_back(y_coor);
       copy.push_back(x_coor);
       for (int i = 0; i < occupied.size(); ++i) {
