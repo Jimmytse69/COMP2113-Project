@@ -47,7 +47,7 @@ https://www.youtube.com/watch?v=z6qGf5y7hAA
      ,cloned from https://github.com/mirror/ncurses
      
 ## Reference (or directly copied)
-     https://github.com/Colton-Ko/tetris-in-ncurses (buildncurses.sh and Makefile)
-     https://www.youtube.com/watch?v=lV-OPQhPvSM&list=PL2U2TQ__OrQ8jTf0_noNKtHMuYlyxQl4v (ncurses library tutorial)
+- https://github.com/Colton-Ko/tetris-in-ncurses (buildncurses.sh and Makefile)
+- https://www.youtube.com/watch?v=lV-OPQhPvSM&list=PL2U2TQ__OrQ8jTf0_noNKtHMuYlyxQl4v (ncurses library tutorial)
           
-     Special thanks to https://github.com/Colton-Ko for teaching and open-sourcing the method to build(and complier) ncruses external library with only user permission.
+- **Special thanks to https://github.com/Colton-Ko for teaching and open-sourcing the method to build(and complier) ncruses external library with only user permission.**
