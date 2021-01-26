@@ -5,6 +5,9 @@
 ## Game Discription of Snake
 The user, as the snake, has to eat apples (represented by 'o') to get score. If it attains 100 score, then it will win the game. If it crushes with the wall, then it will lose. Use WSAD to control. To quit the game, press q.
 
+## Demo Video
+https://www.youtube.com/watch?v=z6qGf5y7hAA
+
 ## How to run:
 * open new terminal in that main directory, type the following
 * make (need to wait 1-2 mins)
